@@ -13,7 +13,7 @@ body {
   font-weight: 400;
   font-style: normal;
   background-color: black;
-  background-image: url(/img/bg.jpg);
+  background-image: url(img/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -337,7 +337,7 @@ body.portfolio {
 
 .main-portfolio__topbackground {
   height: 30px;
-  background-image: url(/img/bg_top.png);
+  background-image: url(img/bg_top.png);
 }
 .main-portfolio__gallery {
   margin-top: 20px;
@@ -359,7 +359,7 @@ body.portfolio {
 
 .main-portfolio__btmbackground {
   height: 30px;
-  background-image: url(/img/bg_btm.png);
+  background-image: url(img/bg_btm.png);
 }
 
 /* Contacts */
@@ -390,7 +390,7 @@ body.portfolio {
   margin-top: 70px;
   margin-bottom: 90px;
   height: 410px;
-  background-image: url(/img/bg-form.png);
+  background-image: url(img/bg-form.png);
   background-size: cover;
 }
 
@@ -507,7 +507,7 @@ body.portfolio {
 
 @media (max-width: 1000px) {
   body {
-    background-image: url(/img/bd_tablet.jpg);
+    background-image: url(img/bd_tablet.jpg);
     background-size: cover;
   }
 }
