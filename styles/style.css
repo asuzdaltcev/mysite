@@ -13,7 +13,7 @@ body {
   font-weight: 400;
   font-style: normal;
   background-color: black;
-  background-image: url(img/bg.jpg);
+  background-image: url('../img/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
