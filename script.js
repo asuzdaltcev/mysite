@@ -9,3 +9,45 @@ burgerButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   burgerMenu.classList.remove("burger__menu--active");
 });
+
+// Modal functionality
+const modal = document.getElementById('contactModal');
+const hireMeBtn = document.querySelector('.btn');
+const closeModalBtn = document.querySelector('.modal__close-btn');
+const contactForm = document.querySelector('.modal__form');
+
+// Open modal
+hireMeBtn.addEventListener('click', () => {
+  modal.classList.add('modal--active');
+  document.body.style.overflow = 'hidden';
+});
+
+// Close modal
+closeModalBtn.addEventListener('click', () => {
+  modal.classList.remove('modal--active');
+  document.body.style.overflow = '';
+});
+
+// Close modal when clicking outside
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('modal--active');
+    document.body.style.overflow = '';
+  }
+});
+
+// Handle form submission
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData(contactForm);
+  const data = Object.fromEntries(formData);
+  
+  // Here you can add your form submission logic
+  console.log('Form data:', data);
+  
+  // Close modal after submission
+  modal.classList.remove('modal--active');
+  document.body.style.overflow = '';
+  contactForm.reset();
+});

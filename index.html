@@ -48,6 +48,29 @@
       </div>
     </div>
   </main>
+  <div class="modal" id="contactModal">
+    <div class="modal__content">
+      <button class="modal__close-btn">
+        <img class="modal__close-icon" src="img/close_big.svg" alt="Закрыть">
+      </button>
+      <h2 class="modal__title">Связаться со мной</h2>
+      <form class="modal__form" id="contactForm">
+        <div class="modal__form-group">
+          <label class="modal__form-label" for="name">Ваше имя</label>
+          <input class="modal__form-input" type="text" id="name" name="name" required>
+        </div>
+        <div class="modal__form-group">
+          <label class="modal__form-label" for="email">Email</label>
+          <input class="modal__form-input" type="email" id="email" name="email" required>
+        </div>
+        <div class="modal__form-group">
+          <label class="modal__form-label" for="message">Сообщение</label>
+          <textarea class="modal__form-textarea" id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="modal__form-submit btn">Отправить</button>
+      </form>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
