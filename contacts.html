@@ -39,7 +39,21 @@
         <a href="#!" target="_blank"><img src="./img/twitter-big.png" alt=""></a>
     </div>
     <div class="contacts__form">
-      <!-- тут будет форма и кнопка отправки -->
+      <form class="contacts__form-wrapper">
+        <div class="contacts__form-group">
+          <label class="contacts__form-label" for="name">Your name</label>
+          <input class="contacts__form-input" type="text" id="name" name="name" required>
+        </div>
+        <div class="contacts__form-group">
+          <label class="contacts__form-label" for="email">Email</label>
+          <input class="contacts__form-input" type="email" id="email" name="email" required>
+        </div>
+        <div class="contacts__form-group">
+          <label class="contacts__form-label" for="message">Message</label>
+          <textarea class="contacts__form-textarea" id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="contacts__form-submit btn">Send</button>
+      </form>
     </div>
   </main>
 

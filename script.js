@@ -51,3 +51,20 @@ contactForm.addEventListener('submit', (e) => {
   document.body.style.overflow = '';
   contactForm.reset();
 });
+
+// Contacts form functionality
+const contactsForm = document.querySelector('.contacts__form-wrapper');
+if (contactsForm) {
+  contactsForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(contactsForm);
+    const data = Object.fromEntries(formData);
+    
+    // Here you can add your form submission logic
+    console.log('Contacts form data:', data);
+    
+    // Reset form after submission
+    contactsForm.reset();
+  });
+}
