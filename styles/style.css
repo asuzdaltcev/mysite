@@ -337,7 +337,7 @@ body.portfolio {
 
 .main-portfolio__topbackground {
   height: 30px;
-  background-image: url(img/bg_top.png);
+  background-image: url(../img/bg_top.png);
 }
 .main-portfolio__gallery {
   margin-top: 20px;
@@ -359,7 +359,7 @@ body.portfolio {
 
 .main-portfolio__btmbackground {
   height: 30px;
-  background-image: url(img/bg_btm.png);
+  background-image: url(../img/bg_btm.png);
 }
 
 /* Contacts */
@@ -830,4 +830,52 @@ body.portfolio {
 .modal__form-submit {
   margin-top: 20px;
   width: 100%;
+}
+
+/* Gallery Modal styles */
+.modal--gallery {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal__content--gallery {
+  max-width: 90%;
+  max-height: 90vh;
+  padding: 0;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__gallery-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.modal__close-icon {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+}
+
+.gallery-item {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover {
+  opacity: 0.8;
 }

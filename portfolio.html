@@ -35,16 +35,25 @@
     <h2 class="main-portfolio__title">Portfolio</h2>
     <div class="main-portfolio__topbackground"></div>
     <div class="container main-portfolio__gallery">
-        <a href="#!"><img src="./img/portfolio1.png" alt=""></a>
-        <a href="#!"><img src="./img/portfolio2.png" alt=""></a>
-        <a href="#!"><img src="./img/portfolio3.png" alt=""></a>
-        <a href="#!"><img src="./img/portfolio4.png" alt=""></a>
-        <a href="#!"><img src="./img/portfolio5.png" alt=""></a>
-        <a href="#!"><img src="./img/portfolio6.png" alt=""></a>
-        <a href="#!"><img src="./img/portfolio7.png" alt=""></a>
-        <a href="#!"><img src="./img/portfolio8.png" alt=""></a>
+        <a href="#!" class="gallery-item" data-image="./img/portfolio1.jpg"><img src="./img/portfolio1.png" alt=""></a>
+        <a href="#!" class="gallery-item" data-image="./img/portfolio2.jpg"><img src="./img/portfolio2.png" alt=""></a>
+        <a href="#!" class="gallery-item" data-image="./img/portfolio3.jpg"><img src="./img/portfolio3.png" alt=""></a>
+        <a href="#!" class="gallery-item" data-image="./img/portfolio4.jpg"><img src="./img/portfolio4.png" alt=""></a>
+        <a href="#!" class="gallery-item" data-image="./img/portfolio5.jpg"><img src="./img/portfolio5.png" alt=""></a>
+        <a href="#!" class="gallery-item" data-image="./img/portfolio6.jpg"><img src="./img/portfolio6.png" alt=""></a>
+        <a href="#!" class="gallery-item" data-image="./img/portfolio7.jpg"><img src="./img/portfolio7.png" alt=""></a>
+        <a href="#!" class="gallery-item" data-image="./img/portfolio8.jpg"><img src="./img/portfolio8.png" alt=""></a>
     </div>
     <div class="main-portfolio__btmbackground"></div>
+
+    <div class="modal modal--gallery" id="galleryModal">
+      <div class="modal__content modal__content--gallery">
+        <button class="modal__close-btn">
+          <img class="modal__close-icon" src="./img/close_big.svg" alt="Закрыть">
+        </button>
+        <img class="modal__gallery-image" src="" alt="Фотография">
+      </div>
+    </div>
   </main>
   
   <footer class="footer">
