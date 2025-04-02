@@ -151,7 +151,6 @@ body.portfolio {
 }
 
 /* Footer */
-
 .footer {
   display: flex;
   align-items: center;
@@ -160,15 +159,15 @@ body.portfolio {
   font-size: 14px;
   background-color: #111111;
   color: white;
-  
+  margin-top: 40px;
 }
 
 /* Main */
-
 .main {
   display: flex;
   justify-content: space-between;
   margin-top: 278px;
+  margin-bottom: 40px;
 }
 
 .main__title {
@@ -269,6 +268,7 @@ body.portfolio {
 /* Main */
 .main-aboutme {
   min-height: calc(100vh - 200px);
+  padding-bottom: 40px;
 }
 
 .main-aboutme__title {
@@ -368,6 +368,7 @@ body.portfolio {
 .contacts {
   /* height: calc(100% - 110px); */
   min-height: calc(100vh - 222px);
+  padding-bottom: 40px;
 }
 
 .contacts__socials {
@@ -579,7 +580,7 @@ body.portfolio {
 
 @media (max-width: 1000px) {
   body {
-    background-image: url(img/bd_tablet.jpg);
+    background-image: url(../img/bd_tablet.jpg);
     background-size: cover;
   }
 }
@@ -647,6 +648,15 @@ body.portfolio {
   .main-portfolio__gallery img {
     max-height: 200px;
   }
+
+  .main {
+    margin-top: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .footer {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -688,6 +698,22 @@ body.portfolio {
 
   .main-aboutme__content-icons img {
     width: 100px;
+  }
+
+  .main {
+    margin-top: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .footer {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-aboutme__content {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
