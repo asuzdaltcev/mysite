@@ -111,3 +111,67 @@ if (galleryModal && galleryItems.length > 0 && modalImage && closeGalleryBtn) {
     }
   });
 }
+
+// About me tabs
+document.addEventListener('DOMContentLoaded', function() {
+  const tabsContainer = document.querySelector('.main-aboutme__content-left');
+  const tabs = document.querySelectorAll('.main-aboutme__content-icons');
+  const tabContents = document.querySelectorAll('.tab-content');
+  
+  if (!tabsContainer || !tabs.length || !tabContents.length) return;
+
+  // Показываем первый таб по умолчанию
+  tabs[0].classList.add('active');
+  tabContents[0].classList.add('active');
+  
+  let isAnimating = false;
+  let currentIndex = 0;
+
+  tabsContainer.addEventListener('click', function(event) {
+    const tab = event.target.closest('.main-aboutme__content-icons');
+    if (!tab || isAnimating) return;
+
+    const tabId = tab.getAttribute('data-tab');
+    const newIndex = Array.from(tabs).indexOf(tab);
+    const currentActiveTab = document.querySelector('.tab-content.active');
+    const newActiveTab = document.getElementById(tabId);
+    
+    if (!newActiveTab || currentActiveTab === newActiveTab) return;
+
+    isAnimating = true;
+
+    // Определяем направление анимации
+    const isNext = newIndex > currentIndex;
+    currentIndex = newIndex;
+
+    // Убираем активный класс у всех табов
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    
+    // Добавляем классы для анимации
+    currentActiveTab.classList.add('exit');
+    currentActiveTab.classList.add(isNext ? 'exit-left' : 'exit-right');
+    newActiveTab.classList.add(isNext ? 'enter-right' : 'enter-left');
+    
+    // Используем событие окончания анимации
+    const onTransitionEnd = () => {
+      currentActiveTab.classList.remove('active', 'exit', 'exit-left', 'exit-right');
+      newActiveTab.classList.remove('enter-left', 'enter-right');
+      newActiveTab.classList.add('active');
+      isAnimating = false;
+      currentActiveTab.removeEventListener('transitionend', onTransitionEnd);
+    };
+
+    currentActiveTab.addEventListener('transitionend', onTransitionEnd);
+
+    // Страховочный таймер
+    setTimeout(() => {
+      if (isAnimating) {
+        isAnimating = false;
+        currentActiveTab.classList.remove('active', 'exit', 'exit-left', 'exit-right');
+        newActiveTab.classList.remove('enter-left', 'enter-right');
+        newActiveTab.classList.add('active');
+      }
+    }, 600);
+  });
+});

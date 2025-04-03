@@ -275,30 +275,58 @@ body.portfolio {
   font-size: 48px;
   text-align: center;
   padding-top: 56px;
+  padding-bottom: 40px;
 }
 
 .main-aboutme__content {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .main-aboutme__content-left {
+  width: 50%;
   display: flex;
   flex-direction: column;
-  width: calc(50%);
-  margin-top: 80px;
-  gap: 10px;
+  gap: 20px;
 }
+
 .main-aboutme__content-icons {
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  padding: 10px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
+  gap: 20px;
+}
+
+.main-aboutme__content-icons img {
+  width: auto;
+  height: auto;
+}
+
+.main-aboutme__text {
+  font-size: 18px;
+  color: #111111;
+  margin: 0;
+}
+
+.main-aboutme__content-icons:hover {
+  transform: scale(1.05);
+  background-color: rgba(230, 223, 199, 0.1);
+}
+
+.main-aboutme__content-icons.active {
+  background-color: rgba(230, 223, 199, 0.2);
 }
 
 .main-aboutme__content-right {
-  width: calc(50%);
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
 }
 
 .btn-aboutme {
@@ -558,7 +586,6 @@ body.portfolio {
 
 @media (max-width: 1032px) {
   body {
-    height: 100vh;
     overflow: scroll;
   }
 }
@@ -656,6 +683,21 @@ body.portfolio {
   .footer {
     margin-top: 20px;
   }
+
+  .main-aboutme__content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-aboutme__content-left,
+  .main-aboutme__content-right {
+    width: 100%;
+  }
+  
+  .main-aboutme__content-right {
+    min-height: 300px;
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -695,8 +737,12 @@ body.portfolio {
     margin-top: -100px;
   }
 
-  .main-aboutme__content-icons img {
-    width: 100px;
+  .main-aboutme__content-icons {
+    gap: 10px;
+  }
+  
+  .main-aboutme__text {
+    font-size: 16px;
   }
 
   .main {
@@ -902,4 +948,104 @@ body.portfolio {
 
 .gallery-item:hover {
   opacity: 0.8;
+}
+
+/* About me tabs */
+.tab-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform-origin: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tab-content.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+/* Анимация выхода влево */
+.tab-content.exit-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+/* Анимация выхода вправо */
+.tab-content.exit-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Анимация входа справа */
+.tab-content.enter-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.tab-content.enter-right.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Анимация входа слева */
+.tab-content.enter-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.tab-content.enter-left.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.main-aboutme__content-photo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main-aboutme__content-photo:hover {
+  transform: scale(1.02);
+}
+
+.tab-description {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.tab-description h3 {
+  margin-bottom: 10px;
+}
+
+.tab-description p {
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .tab-description h3 {
+    font-size: 20px;
+  }
+  
+  .tab-description p {
+    font-size: 14px;
+  }
+
+  .main-aboutme__content-photo {
+    border-radius: 12px;
+  }
 }

@@ -37,19 +37,41 @@
     <h2 class="main-aboutme__title">About me</h2>
     <div class="main-aboutme__content">
       <div class="main-aboutme__content-left">
-        <div class="main-aboutme__content-icons"><img src="./img/photographer.png" alt="photographer">
+        <div class="main-aboutme__content-icons" data-tab="photographer">
+          <img src="./img/photographer.png" alt="photographer">
           <p class="main-aboutme__text">Life photographer</p>
         </div>
-        <div class="main-aboutme__content-icons"><img src="./img/plane.png" alt="plane">
+        <div class="main-aboutme__content-icons" data-tab="travel">
+          <img src="./img/plane.png" alt="plane">
           <p class="main-aboutme__text">Travel around the World</p>
         </div>
-        <div class="main-aboutme__content-icons"><img src="./img/bycicle.png" alt="bycicle">
+        <div class="main-aboutme__content-icons" data-tab="hobby">
+          <img src="./img/bycicle.png" alt="bycicle">
           <p class="main-aboutme__text">Riding a bycicle</p>
         </div>
       </div>
       <div class="main-aboutme__content-right">
-        <img class="main-aboutme__content-photo" src="./img/camera.png" alt="camera">
-        <button class="btn-aboutme">HIRE ME</button>
+        <div class="tab-content" id="photographer">
+          <img class="main-aboutme__content-photo" src="./img/IMG_2591_1.jpg" alt="camera">
+          <div class="tab-description">
+            <h3>Professional Photography</h3>
+            <p>Capturing life's precious moments with artistic vision and technical expertise.</p>
+          </div>
+        </div>
+        <div class="tab-content" id="travel">
+          <img class="main-aboutme__content-photo" src="./img/IMG_2600 2 copy.jpg" alt="travel">
+          <div class="tab-description">
+            <h3>World Traveler</h3>
+            <p>Exploring the world to capture unique perspectives and cultural moments.</p>
+          </div>
+        </div>
+        <div class="tab-content" id="hobby">
+          <img class="main-aboutme__content-photo" src="./img/IMG_3868 copy.jpg" alt="bicycle">
+          <div class="tab-description">
+            <h3>Cycling Enthusiast</h3>
+            <p>Combining passion for photography with love for cycling adventures.</p>
+          </div>
+        </div>
       </div>
     </div>
   </main>
